@@ -5,13 +5,13 @@ import { Component, OnInit, forwardRef } from '@angular/core';
   selector: 'formctrl-input-text',
   templateUrl: './input-text.component.html',
   styleUrls: ['./input-text.component.scss'],
-   providers: [
-        {
-            provide: NG_VALUE_ACCESSOR,
-            useExisting: forwardRef(() => InputTextComponent),
-            multi: true
-        }
-    ]
+  providers: [
+       {
+           provide: NG_VALUE_ACCESSOR,
+           useExisting: forwardRef(() => InputTextComponent),
+           multi: true
+       }
+   ]
 })
 export class InputTextComponent implements OnInit, ControlValueAccessor {
 

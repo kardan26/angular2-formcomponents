@@ -1,0 +1,10 @@
+:host(.ng-valid) {
+    select.form-control {
+        border-left: 5px solid #42A948;
+    }
+}
+:host(.ng-invalid) {
+    select.form-control {
+        border-left: 5px solid #a94442;
+    }
+}

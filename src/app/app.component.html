@@ -2,18 +2,23 @@
   <header><h3>Form component test</h3> </header>
   <form [formGroup]="form">
     <div class="row">
-      <formctrl-datepicker formControlName="date" displayFormat = "dd - mm - yyyy" lang="en" class="col-sm-8"></formctrl-datepicker>
-      <div class="col-sm-1" style="color: red">*</div>
-      <div class="col-sm-3">{{form.value.date}}</div>
+      <formctrl-datepicker formControlName="date" displayFormat = "dd - mm - yyyy" lang="en" class="col-sm-8 col-xs-11"></formctrl-datepicker>
+      <div class="col-sm-1 col-xs-1" style="color: red">*</div>
+      <div class="col-sm-3 col-xs-12">{{form.value.date}}</div>
     </div>
     <div class="row">
-      <formctrl-input-text formControlName="text"  (ngMoldeChange) = "log($event)" class="col-sm-8"></formctrl-input-text>
-      <div class="col-sm-1" style="color: red">*</div>
-      <div class="col-sm-3">{{form.value.text}}</div>
+      <formctrl-input-text formControlName="text"  (ngMoldeChange) = "log($event)" class="col-sm-8 col-xs-11"></formctrl-input-text>
+      <div class="col-sm-1 col-xs-1" style="color: red">*</div>
+      <div class="col-sm-3 col-xs-12">{{form.value.text}}</div>
     </div>
     <div class="row">
-      <formctrl-switch-button formControlName="switch" class="col-sm-9"></formctrl-switch-button>
-      <div class="col-sm-3">{{form.value.switch}}</div>
+      <formctrl-select-single formControlName="selectsingle"  (ngMoldeChange) = "log($event)" [displayElements] = "dispElem"  [options]="users" class="col-sm-8 col-xs-11"></formctrl-select-single>
+      <div class="col-sm-1 col-xs-1" style="color: red">*</div>
+      <div class="col-sm-3 col-xs-12">{{form.value.selectsingle}}</div>
+    </div>
+    <div class="row">
+      <formctrl-switch-button formControlName="switch" class="col-sm-9 col-xs-12"></formctrl-switch-button>
+      <div class="col-sm-3 col-xs-12">{{form.value.switch}}</div>
     </div>
   </form>
 </div>
