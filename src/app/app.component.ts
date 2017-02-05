@@ -12,6 +12,7 @@ export class AppComponent {
   constructor() {
     this.form = new FormGroup({
       date: new FormControl(null, Validators.required),
+      text: new FormControl('', Validators.required),
       switch: new FormControl(true)
     });
   }
@@ -20,4 +21,7 @@ export class AppComponent {
     console.log(value);
   }
 
+  log(data) {
+    console.log(data);
+  }
 }

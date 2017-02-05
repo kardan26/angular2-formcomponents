@@ -7,6 +7,11 @@
       <div class="col-sm-3">{{form.value.date}}</div>
     </div>
     <div class="row">
+      <formctrl-input-text formControlName="text"  (ngMoldeChange) = "log($event)" class="col-sm-8"></formctrl-input-text>
+      <div class="col-sm-1" style="color: red">*</div>
+      <div class="col-sm-3">{{form.value.text}}</div>
+    </div>
+    <div class="row">
       <formctrl-switch-button formControlName="switch" class="col-sm-9"></formctrl-switch-button>
       <div class="col-sm-3">{{form.value.switch}}</div>
     </div>
