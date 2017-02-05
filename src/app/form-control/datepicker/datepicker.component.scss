@@ -1,0 +1,19 @@
+:host(.ng-valid) {
+    div.form-group {
+        div.input-group.date {
+            input.form-control {
+                border-left: 5px solid #42A948;
+            }
+        }
+    }
+}
+:host(.ng-invalid) {
+    div.form-group {
+        div.input-group.date {
+            input.form-control {
+                border-left: 5px solid #a94442;
+            }
+        }
+    }
+}
+

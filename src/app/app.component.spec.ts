@@ -1,3 +1,5 @@
+import { element } from 'protractor';
+import { FormControlModule } from './form-control/form-control.module';
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async } from '@angular/core/testing';
@@ -9,6 +11,9 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent
       ],
+      imports: [
+        FormControlModule
+      ]
     });
     TestBed.compileComponents();
   });
@@ -30,5 +35,14 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('h1').textContent).toContain('app works!');
+  }));
+
+  it('should app-datepicker not empty element', async(() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('app-datepicker')).not.toEqual(undefined);
+    expect(compiled.querySelector('app-datepicker')).not.toEqual(null);
+    expect(compiled.querySelector('app-datepicker')).toBeTruthy();
   }));
 });

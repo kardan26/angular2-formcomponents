@@ -1,0 +1,7 @@
+/* You can add global styles to this file, and also import other style files */
+$icon-font-path: '../node_modules/bootstrap-sass/assets/fonts/bootstrap/';
+@function font-path($path) {
+  @return $path;
+}
+@import '../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss';
+@import '../node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css';
