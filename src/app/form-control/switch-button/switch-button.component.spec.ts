@@ -1,27 +1,26 @@
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { SwitchButtonComponent } from './switch-button.component';
 import { FormcomponentsPage } from './../../../../e2e/app.po';
 import { ElementRef } from '@angular/core';
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
-import * as $ from 'jquery';
-import { DatepickerComponent } from './datepicker.component';
 
-describe('DatepickerComponent', () => {
-  let component: DatepickerComponent;
-  let fixture: ComponentFixture<DatepickerComponent>;
+describe('SwitchButtonComponent', () => {
+  let component: SwitchButtonComponent;
+  let fixture: ComponentFixture<SwitchButtonComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [FormsModule, ReactiveFormsModule],
-      declarations: [ DatepickerComponent ]
+      declarations: [ SwitchButtonComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DatepickerComponent);
+    fixture = TestBed.createComponent(SwitchButtonComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -29,13 +28,4 @@ describe('DatepickerComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
-  it('datepicker input should exists', () => {
-    expect(component.datepickerinput).toBeTruthy();
-  });
-
-  it('datepicker should be ElementRef type', () => {
-     expect(component.datepickerinput instanceof ElementRef).toBeTruthy();
-  });
-
 });

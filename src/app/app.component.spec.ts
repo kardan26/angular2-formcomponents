@@ -1,3 +1,4 @@
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { element } from 'protractor';
 import { FormControlModule } from './form-control/form-control.module';
 /* tslint:disable:no-unused-variable */
@@ -12,7 +13,9 @@ describe('AppComponent', () => {
         AppComponent
       ],
       imports: [
-        FormControlModule
+        FormControlModule,
+        ReactiveFormsModule,
+        FormsModule
       ]
     });
     TestBed.compileComponents();
@@ -30,19 +33,4 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('app works!');
   }));
 
-  it('should render title in a h1 tag', async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('app works!');
-  }));
-
-  it('should app-datepicker not empty element', async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('app-datepicker')).not.toEqual(undefined);
-    expect(compiled.querySelector('app-datepicker')).not.toEqual(null);
-    expect(compiled.querySelector('app-datepicker')).toBeTruthy();
-  }));
 });

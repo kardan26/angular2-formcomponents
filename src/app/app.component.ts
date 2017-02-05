@@ -8,14 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app works!';
-  date: Date;
   form: FormGroup;
   constructor() {
     this.form = new FormGroup({
-      control: new FormControl('', Validators.required)
+      date: new FormControl(null, Validators.required),
+      switch: new FormControl(true)
     });
-    this.date = null;
-    console.log(this.date);
   }
 
   dateChange(value) {

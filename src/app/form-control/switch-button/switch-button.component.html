@@ -1,0 +1,7 @@
+<label class="switch">
+    <input type="checkbox" [(ngModel)] = "value" (change) = "toogle($event)">
+    <div class="slider">
+        <p *ngIf = "value" style="padding-top: 3px; padding-left: 5px">ON</p>
+        <p *ngIf="!value" style="padding-top: 3px; padding-left: 23px">OFF</p>
+    </div>
+</label>
