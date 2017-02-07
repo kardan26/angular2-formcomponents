@@ -2,6 +2,7 @@
 ###Datepicker
   Port bootstrap datepicker to angular 2
 ###InputText
+  Input type text with bootstrap styling
 ###SelectSingle
   Standard Select with styling and extended to use any object as value in option
 ###SelectSearch
