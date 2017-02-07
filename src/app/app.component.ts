@@ -72,7 +72,7 @@ export class AppComponent {
     console.log(value);
   }
 
-  log(data) {
-    console.log(data);
+  log(data, tag?) {
+    console.log(tag ? tag : 'any' + ' => ' + JSON.stringify(data));
   }
 }
