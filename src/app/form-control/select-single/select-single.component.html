@@ -1,3 +1,4 @@
 <select [(ngModel)] = "value" class="form-control">
-  <option *ngFor="let o of options">{{toString(o)}}</option>
+  <option value="null">{{noSelectionText}}</option>
+  <option *ngFor="let o of parsedOptions" [value]="o.value">{{o.label}}</option>
 </select>

@@ -1,3 +1,7 @@
+import { SwitchButtonModule } from './switch-button/switch-button.module';
+import { SelectSingleModule } from './select-single/select-single.module';
+import { InputTextModule } from './input-text/input-text.module';
+import { DatepickerModule } from './datepicker/datepicker.module';
 import { SwitchButtonComponent } from './switch-button/switch-button.component';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
@@ -8,9 +12,18 @@ import { SelectSingleComponent } from './select-single/select-single.component';
 
 @NgModule({
   imports: [
-    CommonModule, FormsModule
+    CommonModule,
+    FormsModule,
+    DatepickerModule,
+    InputTextModule,
+    SelectSingleModule,
+    SwitchButtonModule
   ],
-  declarations: [DatepickerComponent, SwitchButtonComponent, InputTextComponent, SelectSingleComponent],
-  exports: [DatepickerComponent, SwitchButtonComponent, InputTextComponent, SelectSingleComponent]
+  exports: [
+    DatepickerModule,
+    InputTextModule,
+    SelectSingleModule,
+    SwitchButtonModule
+  ]
 })
 export class FormControlModule { }
