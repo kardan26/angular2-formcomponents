@@ -64,7 +64,7 @@ export class AppComponent {
       text: new FormControl('', Validators.required),
       switch: new FormControl(true),
       selectsingle: new FormControl(this.users[1], Validators.required),
-      selectsearch: new FormControl('daniel', Validators.required)
+      selectsearch: new FormControl(null, Validators.required)
     });
   }
 
