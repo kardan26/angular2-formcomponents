@@ -256,7 +256,7 @@ export class SelectSearchComponent implements AfterViewInit, ControlValueAccesso
         this.hasSelected = this._value.length > 0;
         this.placeholderView = this.hasSelected ? '' : this.placeholder;
         this.updateFilterWidth();
-        if (this.displayElements) {
+        if (this.displayElements && this.value) {
           this.onChange(JSON.parse(this.value));
         } else {
           this.onChange(this.value);
