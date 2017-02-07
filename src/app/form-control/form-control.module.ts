@@ -1,3 +1,4 @@
+import { SelectSearchModule } from './select-search/select-search.module';
 import { SwitchButtonModule } from './switch-button/switch-button.module';
 import { SelectSingleModule } from './select-single/select-single.module';
 import { InputTextModule } from './input-text/input-text.module';
@@ -17,13 +18,15 @@ import { SelectSingleComponent } from './select-single/select-single.component';
     DatepickerModule,
     InputTextModule,
     SelectSingleModule,
-    SwitchButtonModule
+    SwitchButtonModule,
+    SelectSearchModule
   ],
   exports: [
     DatepickerModule,
     InputTextModule,
     SelectSingleModule,
-    SwitchButtonModule
+    SwitchButtonModule,
+    SelectSearchModule
   ]
 })
 export class FormControlModule { }

@@ -20,6 +20,10 @@
       <formctrl-switch-button formControlName="switch" (ngModelChange) = "log($event)" class="col-sm-9 col-xs-12"></formctrl-switch-button>
       <div class="col-sm-3 col-xs-12">{{form.value.switch}}</div>
     </div>
+    <div class="row">
+      <formctrl-select-search formControlName="selectsearch" [options]="users2" class="col-sm-8 col-xs-11"></formctrl-select-search>      <div class="col-sm-1 col-xs-1" style="color: red">*</div>
+      <div class="col-sm-3 col-xs-12">{{form.value.selectsingle | json}}</div>
+    </div>
   </form>
 </div>
 

@@ -38,6 +38,24 @@ export class AppComponent {
       }
     }
   ];
+  users2: any[] = [
+    {
+      label: 'daniel',
+      value: 'daniel'
+    },
+    {
+      label: 'kamil',
+      value: 'kamil'
+    },
+    {
+      label: 'jarek',
+      value: 'jarek'
+    },
+    {
+      label: 'andrzej',
+      value: 'andrzej'
+    }
+  ];
 
   form: FormGroup;
   constructor() {
@@ -45,7 +63,8 @@ export class AppComponent {
       date: new FormControl(null, Validators.required),
       text: new FormControl('', Validators.required),
       switch: new FormControl(true),
-      selectsingle: new FormControl(this.users[1], Validators.required)
+      selectsingle: new FormControl(this.users[1], Validators.required),
+      selectsearch: new FormControl('daniel', Validators.required)
     });
   }
 
