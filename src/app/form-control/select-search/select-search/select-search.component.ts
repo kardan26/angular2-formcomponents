@@ -45,7 +45,7 @@ export class SelectSearchComponent implements AfterViewInit, ControlValueAccesso
     @ViewChild('filterInput') filterInput: any;
 
     private _value: Array<any> = [];
-    optionList: OptionList;
+    public optionList: OptionList;
 
     // Selection state variables.
     hasSelected: boolean = false;
@@ -142,6 +142,9 @@ export class SelectSearchComponent implements AfterViewInit, ControlValueAccesso
     }
 
     onSingleFilterInput(term: string) {
+        if (this.optionList === undefined) {
+            return null;
+        }
         const toEmpty: boolean = this.optionList.filter(term);
         if (toEmpty) {
             this.noOptionsFound.emit(null);
@@ -160,6 +163,9 @@ export class SelectSearchComponent implements AfterViewInit, ControlValueAccesso
         }
         this.updateFilterWidth();
         setTimeout(() => {
+            if (this.optionList === undefined) {
+            return null;
+        }
             const toEmpty: boolean = this.optionList.filter(event.target.value);
             if (toEmpty) {
                 this.noOptionsFound.emit(null);
@@ -240,6 +246,8 @@ export class SelectSearchComponent implements AfterViewInit, ControlValueAccesso
             v = [];
         } else if (typeof v === 'string') {
             v = [v];
+        } else if (typeof v === 'object') {
+            v = [JSON.stringify(v)];
         } else if (!Array.isArray(v)) {
             throw new TypeError('Value must be a string or an array.');
         }

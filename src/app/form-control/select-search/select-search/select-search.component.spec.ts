@@ -1,3 +1,4 @@
+import { SelectSearchDropdownComponent } from './../select-search-dropdown/select-search-dropdown.component';
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
@@ -11,7 +12,7 @@ describe('SelectSearchComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SelectSearchComponent ]
+      declarations: [ SelectSearchComponent, SelectSearchDropdownComponent ]
     })
     .compileComponents();
   }));

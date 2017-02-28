@@ -47,6 +47,9 @@ export class OptionList {
     }
 
     getOptionsByValue(value: string): Array<Option> {
+        if (this.options === undefined) {
+            return null;
+        }
         return this.options.filter((option) => {
             return option.value === value;
         });
@@ -71,6 +74,9 @@ export class OptionList {
     /** Selection. **/
 
     get selection(): Array<Option> {
+        if (this.options === undefined) {
+            return null;
+        }
         return this.options.filter((option) => {
             return option.selected;
         });
@@ -96,6 +102,9 @@ export class OptionList {
     /** Filter. **/
 
     get filtered(): Array<Option> {
+        if (this.options === undefined) {
+            return null;
+        }
         return this.options.filter((option) => {
             return option.shown;
         });

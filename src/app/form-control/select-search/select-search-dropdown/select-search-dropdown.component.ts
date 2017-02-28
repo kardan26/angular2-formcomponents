@@ -10,17 +10,17 @@ import {
     ViewEncapsulation
 } from '@angular/core';
 
-import {Option} from '../option';
-import {OptionList} from '../option-list';
+import { Option } from '../option';
+import { OptionList } from '../option-list';
 @Component({
-  selector: 'formctrl-select-search-dropdown',
-  templateUrl: './select-search-dropdown.component.html',
-  styleUrls: ['./select-search-dropdown.component.scss'],
-  encapsulation: ViewEncapsulation.None
+    selector: 'formctrl-select-search-dropdown',
+    templateUrl: './select-search-dropdown.component.html',
+    styleUrls: ['./select-search-dropdown.component.scss'],
+    encapsulation: ViewEncapsulation.None
 })
-export class SelectSearchDropdownComponent implements OnInit,  OnChanges, AfterViewInit {
+export class SelectSearchDropdownComponent implements OnInit, OnChanges, AfterViewInit {
 
-  @Input() filterEnabled: boolean;
+    @Input() filterEnabled: boolean;
     @Input() highlightColor: string;
     @Input() highlightTextColor: string;
     @Input() left: number;
@@ -96,6 +96,9 @@ export class SelectSearchDropdownComponent implements OnInit,  OnChanges, AfterV
     /** Initialization. **/
 
     private optionsReset() {
+        if (this.optionList === undefined) {
+            return null;
+        }
         this.optionList.filter('');
         this.optionList.highlight();
     }
@@ -123,23 +126,24 @@ export class SelectSearchDropdownComponent implements OnInit,  OnChanges, AfterV
 
         const list = this.optionsList.nativeElement;
         const listHeight = list.offsetHeight;
+        if (this.optionList) {
+            const itemIndex = this.optionList.getHighlightedIndex();
 
-        const itemIndex = this.optionList.getHighlightedIndex();
+            if (itemIndex > -1) {
+                const item = list.children[0].children[itemIndex];
+                const itemHeight = item.offsetHeight;
 
-        if (itemIndex > -1) {
-            const item = list.children[0].children[itemIndex];
-            const itemHeight = item.offsetHeight;
+                const itemTop = itemIndex * itemHeight;
+                const itemBottom = itemTop + itemHeight;
 
-            const itemTop = itemIndex * itemHeight;
-            const itemBottom = itemTop + itemHeight;
+                const viewTop = list.scrollTop;
+                const viewBottom = viewTop + listHeight;
 
-            const viewTop = list.scrollTop;
-            const viewBottom = viewTop + listHeight;
-
-            if (itemBottom > viewBottom) {
-                list.scrollTop = itemBottom - listHeight;
-            } else if (itemTop < viewTop) {
-                list.scrollTop = itemTop;
+                if (itemBottom > viewBottom) {
+                    list.scrollTop = itemBottom - listHeight;
+                } else if (itemTop < viewTop) {
+                    list.scrollTop = itemTop;
+                }
             }
         }
     }

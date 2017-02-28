@@ -12,7 +12,7 @@
         #optionsList>
         <ul
             (wheel)="onOptionsWheel($event)">
-            <li *ngFor="let option of optionList.filtered"
+            <li *ngFor="let option of optionList?.filtered"
                 [ngClass]="{'highlighted': option.highlighted, 'selected': option.selected, 'disabled': option.disabled}"
                 [ngStyle]="getOptionStyle(option)"
                 (click)="onOptionClick(option)"
@@ -20,7 +20,7 @@
                 {{option.label}}
             </li>
             <li
-                *ngIf="!optionList.hasShown"
+                *ngIf="!optionList?.hasShown"
                 class="message">
                 {{notFoundMsg}}
             </li>
