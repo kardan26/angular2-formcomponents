@@ -1,4 +1,6 @@
 #Angular 2 form components:
+## Build Status
+[![Build Status](http://ci.ikardan.pl/buildStatus/icon?job=angular2-components)](http://ci.ikardan.pl/job/angular2-components/)
 ###Datepicker
   Port bootstrap datepicker to angular 2
 ###InputText
